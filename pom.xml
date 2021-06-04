@@ -43,7 +43,12 @@
             <artifactId>mybatis-spring</artifactId>
             <version>2.0.2</version>
         </dependency>
-
+        <!-- 连接池-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.17</version>
+        </dependency>
         <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -61,6 +66,7 @@
             <version>1.18.8</version>
         </dependency>
     </dependencies>
+
     <!-- 静态资源导出问题-->
     <build>
         <resources>
