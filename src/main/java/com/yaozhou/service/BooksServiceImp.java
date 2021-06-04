@@ -1,4 +1,4 @@
-package com.yaozhou.services;
+package com.yaozhou.service;
 
 import com.yaozhou.dao.BookMapper;
 import com.yaozhou.pojo.Books;
@@ -9,7 +9,7 @@ import java.util.List;
  * Created by WXHang on HANG at 2021/6/4 12:58
  * Desc：
  */
-public class BooksServicesImp implements BookServices {
+public class BooksServiceImp implements BookService {
     //servies 调dao层：组合dao层
     private BookMapper bookMapper;
 
