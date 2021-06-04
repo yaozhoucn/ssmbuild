@@ -5,8 +5,27 @@
 
 <!-- 一个mapper对应一个接口-->
 <mapper namespace="com.yaozhou.dao.BookMapper">
+    <!-- 增加一本书-->
     <insert id="addBook" parameterType="Books">
         insert into ssmbuild.books ( bookName, bookCounts, detail)
-        values (${},${},${});
+        values (#{},#{},#{});
     </insert>
+    <!-- 删除一本书-->
+    <delete id="deleteBookById" parameterType="int">
+        delete from books where bookID = #{bookId};
+    </delete>
+    <!-- 更新一本书-->
+    <update id="updateBook" parameterType="Books">
+        update ssmbuild.books set bookName= #{bookName},bookCounts = #{bookCounts},detail = #{detail}
+        where bookID = #{bookId};
+    </update>
+    <!-- 根据id查询一本书-->
+    <select id="querBookById" parameterType="int" resultType="Books">
+        select * from books where bookID = #{bookId};
+    </select>
+    <!-- 查询全部书籍-->
+    <select id="querAllBook" resultMap="Books">
+        select * from books;
+    </select>
+
 </mapper>
