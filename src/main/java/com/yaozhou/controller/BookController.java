@@ -29,4 +29,10 @@ public class BookController {
         //返回前端展示
         return "allBook";
     }
+    //跳转到增加书籍页面
+    @RequestMapping("toAddBook")
+    public String toAddPaper(){
+        return "toAddPaper";
+    }
+
 }
