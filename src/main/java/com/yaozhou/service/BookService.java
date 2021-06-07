@@ -8,6 +8,7 @@ import java.util.List;
  * Created by WXHang on HANG at 2021/6/4 12:57
  * Desc：
  */
+
 public interface BookService {
     //增加一本书
     int addBook(Books books);
