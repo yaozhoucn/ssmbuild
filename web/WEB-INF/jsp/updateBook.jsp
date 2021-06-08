@@ -28,10 +28,11 @@
     </div>
 
     <form action="${pageContext.request.contextPath}/book/updateBook" method="post">
-        <input type="hidden" name="bookID" value="${book.getBookID()}"/>
-        书籍名称：<input type="text" name="bookName" value="${book.getBookName()}"/>
-        书籍数量：<input type="text" name="bookCounts" value="${book.getBookCounts()}"/>
-        书籍详情：<input type="text" name="detail" value="${book.getDetail() }"/>
+        <%--隐藏Id--%>
+        <input type="hidden" name="bookId" value="${Qbooks.bookId}"/>
+        书籍名称：<input type="text" name="bookName" class="form-control" value="${Qbooks.bookName}"/>
+        书籍数量：<input type="text" name="bookCounts" class="form-control" value="${Qbooks.bookCounts}"/>
+        书籍详情：<input type="text" name="detail" class="form-control" value="${Qbooks.detail }"/>
         <input type="submit" value="提交"/>
     </form>
 

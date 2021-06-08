@@ -27,5 +27,9 @@
     <select id="queryAllBook" resultType="Books">
         select * from books;
     </select>
+    <!--通过书籍名称来查询书籍-->
+    <select id="querBook" parameterType="String" resultType="Books">
+        select * from ssmbuild.books where bookName like '%${bookName}%'
+    </select>
 
 </mapper>

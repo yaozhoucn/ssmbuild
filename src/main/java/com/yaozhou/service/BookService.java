@@ -27,4 +27,7 @@ public interface BookService {
 
     //查询全部书籍
     List<Books> queryAllBook();
+
+    //通过名称来查询书籍
+    List<Books> querBook(String bookName);
 }

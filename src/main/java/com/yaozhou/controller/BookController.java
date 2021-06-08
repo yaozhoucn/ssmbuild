@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -44,16 +45,36 @@ public class BookController {
     }
     //跳转到更改书籍页面
     @RequestMapping("toUpdateBook")
-    public String toupdataBook(Books books){
-
+    public String toupdataBook(int id,Model model){
+        Books books = bookService.querBookById(id);
+        //把数据提交到前端页面
+        model.addAttribute("Qbooks",books);
         return "updateBook";
     }
     //更改书籍
     @RequestMapping("updateBook")
     public String updateBook(Books books){
-        System.out.println(books.getBookID());
         int updateBook = bookService.updateBook(books);
+        //重定向页面
+        return "redirect:/book/allBook";
+    }
+    //删除书籍
+    @RequestMapping("del/{bookId}")
+    //restful分格，从前端取数据
+    private String delBookById(@PathVariable("bookId") int id){
+        System.out.println(id);
+        int i = bookService.deleteBookById(id);
+        return "redirect:/book/allBook";
+    }
+
+    //查询书籍
+    @RequestMapping("selectBook")
+    private String selectBook(String bookName,Model model){
+        List<Books> list = bookService.querBook(bookName);
+        model.addAttribute("list",list);
+        System.out.println(list);
         return "allBook";
+
     }
 
 }
