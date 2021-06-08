@@ -34,7 +34,7 @@
         </div>
         <%--书籍查询功能--%>
         <div class="col-md-4 column">
-            <form action="${pageContext.request.contextPath}/book/selectBook" method="post">
+            <form class="form-inline" action="${pageContext.request.contextPath}/book/selectBook" method="post">
                 <input type="text" name="bookName" class="form-control" placeholder="请输入要查询的书籍名称">
                 <input type="submit" value="查询" class="btn btn-primary">
             </form>
