@@ -19,7 +19,7 @@
     <mvc:default-servlet-handler/>
 
 
-    <!--3.扫描包：controller-->
+    <!--3.扫描包：controller 上下文扫描-->
     <context:component-scan base-package="com.yaozhou.controller"/>
 
     <!--4.视图解析器-->

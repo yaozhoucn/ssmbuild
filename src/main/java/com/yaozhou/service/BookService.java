@@ -19,7 +19,7 @@ public interface BookService {
     int deleteBookById(int id);
     //根据id查询一本书
 
-    Books querBookById( int id);
+    Books querBookById(int id);
 
     //更新一本书】
     int updateBook(Books books);

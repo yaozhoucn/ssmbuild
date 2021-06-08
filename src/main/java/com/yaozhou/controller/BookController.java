@@ -32,7 +32,28 @@ public class BookController {
     //跳转到增加书籍页面
     @RequestMapping("toAddBook")
     public String toAddPaper(){
-        return "toAddPaper";
+        return "addBook";
+    }
+
+    //新增书籍
+    @RequestMapping("addBook")
+    public String addBook(Books books){
+        int addBook = bookService.addBook(books);
+        //重定向
+        return "redirect:/book/allBook";
+    }
+    //跳转到更改书籍页面
+    @RequestMapping("toUpdateBook")
+    public String toupdataBook(Books books){
+
+        return "updateBook";
+    }
+    //更改书籍
+    @RequestMapping("updateBook")
+    public String updateBook(Books books){
+        System.out.println(books.getBookID());
+        int updateBook = bookService.updateBook(books);
+        return "allBook";
     }
 
 }
