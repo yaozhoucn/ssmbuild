@@ -13,7 +13,7 @@ public class Mytest {
         //拿到spring的所有配置文件，所有bean
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         BookService bookServiceImpl = (BookService) applicationContext.getBean("BooksServiceImp");
-        for (Books books : bookServiceImpl.querAllBook()) {
+        for (Books books : bookServiceImpl.queryAllBook()) {
             System.out.println(books);
         }
 

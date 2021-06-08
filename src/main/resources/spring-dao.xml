@@ -59,7 +59,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--绑定配置文件-->
-        <property name="mapperLocations" value="classpath:mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
     <!--配置dao接口扫描，动态的是实现了dao接口可以注入到spring容器中！-->

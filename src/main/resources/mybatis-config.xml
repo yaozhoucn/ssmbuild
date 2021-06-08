@@ -12,7 +12,7 @@
     </typeAliases>
 
     <mappers>
-        <mapper class="com.yaozhou.dao.BookMapper"/>
+        <mapper resource="com/yaozhou/dao/BookMapper.xml"/>
     </mappers>
 
 </configuration>

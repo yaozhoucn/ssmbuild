@@ -21,10 +21,10 @@ public class BookController {
     @Autowired
     @Qualifier("BooksServiceImp")
     private BookService bookService;
-    //查询所有书籍，并且返回一个书籍展示页面
+    //查询所有书籍，并且返回一个书籍展示页面y
     @RequestMapping("/allBook")
     public String list(Model model){
-        List<Books> list = bookService.querAllBook();
+        List<Books> list = bookService.queryAllBook();
         model.addAttribute("list",list);
         //返回前端展示
         return "allBook";

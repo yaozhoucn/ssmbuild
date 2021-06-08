@@ -25,5 +25,5 @@ public interface BookMapper {
 
 
     //查询全部书籍
-    List<Books> querAllBook();
+    List<Books> queryAllBook();
 }
